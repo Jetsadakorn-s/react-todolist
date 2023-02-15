@@ -1,26 +1,55 @@
-.container{
-  align-items: center;
-  text-align: center;
-  background-color: orange;
-  margin: 3rem;
-  border-radius: 10px;
+h1{
+  font-size: 3rem;
   line-height: 1.2;
+  text-align: center;
+}
+
+.container{
+  background-color: orange;
+  padding: 1.2rem;
+  width: 90vw;
+  margin: 8rem auto;
+  max-width: 35rem;
+  border-radius: 0.25rem;
+  line-height: 1.2;
+  border-radius: 10px;
 }
 .form-control{
   display: flex;
   justify-content: center;
-  padding: 10px;
 }
 .text-input{
   border-radius: 10px;
   padding: 0.25rem;
   font-size: 1.2rem;
   border: transparent;
+  flex: 1 0 auto;
+  margin-right: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+
 }
 .submit-button{
   background: black;
   color: white;
   cursor: pointer;
   border: transparent;
+  border-radius: 10px;
+  font-weight: 800;
+}
+.list-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+.alert{
+  margin-bottom: 1.5rem;
+  height: 1.25rem;
+  padding: 0.25rem;
   border-radius: 10px;
 }
