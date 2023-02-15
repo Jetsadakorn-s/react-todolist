@@ -8,21 +8,26 @@ function App() {
   const [name,setName] = useState("")
   const [list,setList] = useState([])
 
-  const [alert,setAlert] = useState({show:true,msg:'',type:''})
+  const [alert,setAlert] = useState({show:false,msg:'',type:''})
 
   const submitData=(e)=>{
     e.preventDefault()
+    if(!name){
+      setAlert({show:true,msg:"กรุุณาป้อนข้อมูล",type:"error"})
+    }else{
     const newItem={
       id:v4(),
       title:name
     }
     setList([...list,newItem])
     setName('')
-  }
+      setAlert({show:true,msg:"บันทึกข้อมูลเรียบร้อย",type:"success"})
+
+  }}
   return (
     <section className='container'>
       <h1>To Do List</h1>
-      {alert.show && <Alert/>}
+      {alert.show && <Alert {...alert}/>}
       <form className='form-group' onSubmit={submitData}>
         <div className='form-control'>
           <input type="text" className="text-input"

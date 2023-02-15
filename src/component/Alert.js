@@ -1,6 +1,6 @@
-const Alert =()=>{
+const Alert =({msg,type})=>{
     return(
-        <p>error</p>
+        <p className={`alert ${type}`}>{msg}</p>
     )
 }
 export default Alert
