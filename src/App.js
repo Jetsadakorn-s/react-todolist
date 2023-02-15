@@ -22,8 +22,17 @@ function App() {
     setList([...list,newItem])
     setName('')
       setAlert({show:true,msg:"บันทึกข้อมูลเรียบร้อย",type:"success"})
-
   }}
+
+    const removeItem=(id)=>{
+      const result = list.filter((item)=>item.id !== id)
+      setList(result)
+      setAlert({show:true,msg:"ลบข้อมูลเรียบร้อย",type:"error"})
+    }
+
+    const editItem=(id)=>{
+      console.log("แก้ไขข้อมูล : ",id)
+    }
   return (
     <section className='container'>
       <h1>To Do List</h1>
@@ -39,7 +48,7 @@ function App() {
       </form>
       <section className='List-container'>
           {list.map((data,index)=>{
-            return<List key={index} {...data}/>
+            return<List key={index} {...data} removeItem={removeItem} editItem={editItem}/>
           })}
       </section>
     </section>
